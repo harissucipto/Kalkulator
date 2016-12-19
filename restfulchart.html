@@ -4,13 +4,13 @@
 <head>
     <title>RESTful ROUTES Kalkulator</title>
     <style>
-        table {
+        th {
             text-align: center;
         }
         
         td,
         th {
-            border: 2px solid black;
+            border: 1px solid black;
             padding: 4px;
         }
     </style>
@@ -35,16 +35,84 @@
                 <td>Landing Pages</td>
                 <td>/</td>
                 <td>GET</td>
-                <td>Menampilkan landing page</td>
+                <td>Menampilkan landing page atau index pages</td>
                 <td>N/A</td>
             </tr>
             <tr>
-                <td>Landing Pages</td>
-                <td>/</td>
+                <td>Login Form</td>
+                <td>/login</td>
                 <td>GET</td>
-                <td>Menampilkan landing page</td>
+                <td>Menampilkan halaman Form Login</td>
                 <td>N/A</td>
             </tr>
+            <tr>
+                <td>handle login</td>
+                <td>/login</td>
+                <td>POST</td>
+                <td>menghandle login pengguna</td>
+                <td>N/A</td>
+            </tr>
+            <tr>
+                <td>Register Form</td>
+                <td>/register</td>
+                <td>GET</td>
+                <td>menampilkan halaman register</td>
+                <td>N/A</td>
+            </tr>
+            <tr>
+                <td>handle Register</td>
+                <td>/register</td>
+                <td>POST</td>
+                <td>menghandle register</td>
+                <td>N/A</td>
+            </tr>
+            <tr>
+                <th colspan="5">CALCULATOR ROUTES</th>
+                <tr>
+                    <td>Calculators</td>
+                    <td>/calculators</td>
+                    <td>GET</td>
+                    <td>menampilkan semua aplikasi Kalkulator</td>
+                    <td>Calculator find()</td>
+                </tr>
+                <tr>
+                    <td>per Calculator</td>
+                    <td>/calculators/id</td>
+                    <td>GET</td>
+                    <td>menampilkan per aplikasi Kalkulator</td>
+                    <td>Calculator findById()</td>
+                </tr>
+                <tr>
+                    <td> Bookmark Calculator</td>
+                    <td>/calculators/id/bookmark</td>
+                    <td>PUT</td>
+                    <td>bookmark Kalkulator yang dipilih lalu redirect kembali ke halaman</td>
+                    <td>User findByIdAndUpdate()</td>
+                </tr>
+                <th colspan="5">USER ROUTES</th>
+                <tr>
+                    <td>USER</td>
+                    <td>/user</td>
+                    <td>GET</td>
+                    <td>menampilkan semua informasi tentang pengguna dan lain - lain</td>
+                    <td>User findById()</td>
+                </tr>
+                <tr>
+                    <td>EDIT USER</td>
+                    <td>/user/edit</td>
+                    <td>GET</td>
+                    <td>Menampilkan form edit data pengguna</td>
+                    <td>User findById()</td>
+                </tr>
+                <tr>
+                    <td>UPDATE USER</td>
+                    <td>/user</td>
+                    <td>PUT</td>
+                    <td>UPDATE informasi pengguna lalu redirect ke halaman pengguna</td>
+                    <td>User findByIdAndUpdate()</td>
+                </tr>
+            </tr>
+
         </tbody>
     </table>
 </body>
