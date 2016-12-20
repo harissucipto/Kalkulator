@@ -3,22 +3,55 @@ var express = require("express"),
     bodyParser = require("body-parser");
 
 
+
+// contoh data kalkulator
+var Calculators = [{
+    name: "binomial",
+    image: "images/binomial.png",
+    url: "calculators/binomial",
+    description: "Binomial adalah jumlah keberhasilan dalam n percobaan ya/tidak dimana setiap percobaan memiliki probalitas"
+}];
+
+
+
 // gunakan body parser agar bisa digunakan
 // untuk mendapat data dari form
 app.use(bodyParser.urlencoded({ extended: true }));
+//gunakan direktori public
 
+app.use(express.static(__dirname + "/public"));
+
+// ==========================
+// INDEX ROUTES
+// =========================
 
 // set view engine ke ejs
 app.set("view engine", "ejs");
 
-
 // landing pages route
 app.get("/", function(req, res) {
-    res.send("Ini halaman landing Pages");
+    res.render("landing");
+});
+
+// =======================
+// CALCULATORS ROUTES
+// =========================
+app.get("/calculators", function(req, res) {
+    res.render("calculators", { calculators: Calculators });
+});
+
+app.get("/calculators/:id", function(req, res) {
+    Calculators.forEach(function(calculator) {
+        if (req.params.id == calculator.name) {
+            res.render(calculator.url);
+        }
+    });
 });
 
 
-// starting server
+
+
+// starting server in port 3000
 app.listen(3000, function(err) {
     if (err) {
         console.log(err);

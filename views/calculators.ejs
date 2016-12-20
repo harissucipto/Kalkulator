@@ -1,0 +1,16 @@
+<h1>Selamat Menggunakan Aplikasi Kalkulator!</h1>
+<p>
+    Aplikasi Kalkulator dibuat Untuk Menyelesaikan permasalahan - permasalan 
+    dengan langkah demi langkah dalam menyelesaikan permasalahan yang diberikan
+</p>
+
+
+<div>
+<% calculators.forEach(function(calculator) { %>
+    <div>
+        <h4><%= calculator.name %></h4>
+        <p><img src="<%= calculator.image %>"></p>
+        <p><%= calculator.description %></p>
+    </div>
+<% }) %>
+</div>
