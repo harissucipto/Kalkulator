@@ -1,23 +1,39 @@
 var express = require("express"),
     app = express(),
-    bodyParser = require("body-parser");
-
+    bodyParser = require("body-parser"),
+    mongoose = require("mongoose");
 
 
 // contoh data kalkulator
+/*
 var Calculators = [{
     name: "binomial",
     image: "images/binomial.png",
     url: "calculators/binomial",
     description: "Binomial adalah jumlah keberhasilan dalam n percobaan ya/tidak dimana setiap percobaan memiliki probalitas"
 }];
+*/
 
-
-
-
+mongoose.connect("mongodb://localhost/kalkulator");
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(express.static(__dirname + "/public"));
 app.set("view engine", "ejs");
+
+
+// SCEHMA SETUP
+var calculatorSchema = new mongoose.Schema({
+    name: String,
+    image: String,
+    url: String,
+    description: String
+});
+
+var Calculator = mongoose.model("Calculator", calculatorSchema);
+
+
+
+
+
 
 
 // ==========================
