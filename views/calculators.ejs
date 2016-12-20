@@ -8,9 +8,10 @@
 <div>
 <% calculators.forEach(function(calculator) { %>
     <div>
-        <h4><%= calculator.name %></h4>
+        <h4><%= calculator.name.toUpperCase() %></h4>
         <p><img src="<%= calculator.image %>"></p>
         <p><%= calculator.description %></p>
+        <a href="<%= calculator.url %>">Gunakan</a>
     </div>
 <% }) %>
 </div>
