@@ -14,24 +14,21 @@ var Calculators = [{
 
 
 
-// gunakan body parser agar bisa digunakan
-// untuk mendapat data dari form
-app.use(bodyParser.urlencoded({ extended: true }));
-//gunakan direktori public
 
+app.use(bodyParser.urlencoded({ extended: true }));
 app.use(express.static(__dirname + "/public"));
+app.set("view engine", "ejs");
+
 
 // ==========================
 // INDEX ROUTES
 // =========================
-
-// set view engine ke ejs
-app.set("view engine", "ejs");
-
 // landing pages route
 app.get("/", function(req, res) {
     res.render("landing");
 });
+
+
 
 // =======================
 // CALCULATORS ROUTES
