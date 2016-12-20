@@ -7,6 +7,8 @@
 Setiap Calculator  mempunyai:
     * Nama
     * Gambar
-    * Nama Halaman yang akan dirender
-    * Deskripsi singkat
 
+
+##Layout and Basic Styling
+* Buat header dan footer partials
+* tambahkan boostrap kedalamnya

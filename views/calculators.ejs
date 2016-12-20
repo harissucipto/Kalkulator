@@ -1,17 +1,26 @@
-<h1>Selamat Menggunakan Aplikasi Kalkulator!</h1>
-<p>
-    Aplikasi Kalkulator dibuat Untuk Menyelesaikan permasalahan - permasalan 
-    dengan langkah demi langkah dalam menyelesaikan permasalahan yang diberikan
-</p>
-
-
-<div>
-<% calculators.forEach(function(calculator) { %>
-    <div>
-        <h4><%= calculator.name.toUpperCase() %></h4>
-        <p><img src="<%= calculator.image %>"></p>
-        <p><%= calculator.description %></p>
-        <a href="<%= calculator.url %>">Gunakan</a>
+<% include partials/header %>
+<div class="container">
+    <header class="jumbotron">
+        <div class="container">
+            <h1>Selamat Menggunakan!!</h1>
+            <p>
+                Dirancang untuk menyelesaikan masalah langkah demi langkah!.
+            </p>
+        </div>
+    </header>
+    
+    <div class="row text-center" style="display:flex flex-wrap: wrap;">
+        <% calculators.forEach(function(calculator) { %>
+            <div class="col-md-3 col-sm-4">
+                <div class="thumbnail">
+                    <img src="<%= calculator.image %>">
+                    <div clas="caption">
+                        <h4><%= calculator.name %></h4>
+                    </div>
+                </div>
+            </div>
+        <% }) %>
     </div>
-<% }) %>
 </div>
+
+<% include partials/footer %>
