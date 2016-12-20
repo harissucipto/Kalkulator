@@ -30,6 +30,7 @@ var calculatorSchema = new mongoose.Schema({
 
 var Calculator = mongoose.model("Calculator", calculatorSchema);
 
+/*
 Calculator.create({
         name: "binomial",
         image: "images/binomial.png",
@@ -46,7 +47,7 @@ Calculator.create({
     }
 
 );
-
+*/
 
 
 
@@ -65,13 +66,28 @@ app.get("/", function(req, res) {
 // CALCULATORS ROUTES
 // =========================
 app.get("/calculators", function(req, res) {
-    res.render("calculators", { calculators: Calculators });
+    Calculator.find({}, function(err, allCalculator) {
+        if (err) {
+            console.log(err);
+        } else {
+            res.render("index", { calculators: allCalculator });
+        }
+    });
 });
 
+app.get("/show", function(req, res) {
+    res.render("show");
+});
+
+// tampilkan per kalkulator
 app.get("/calculators/:id", function(req, res) {
-    Calculators.forEach(function(calculator) {
-        if (req.params.id == calculator.name) {
-            res.render(calculator.url);
+    //cari kalkulator berdasarkan id
+    Calculator.findById(req.params.id, function(err, foundCalculator) {
+        if (err) {
+            console.log(err);
+        } else {
+            // render calculator dan kirim data kalkulator
+            res.render(foundCalculator.url, { calculators: foundCalculator });
         }
     });
 });
