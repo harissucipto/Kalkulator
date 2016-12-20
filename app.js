@@ -24,17 +24,15 @@ app.set("view engine", "ejs");
 var calculatorSchema = new mongoose.Schema({
     name: String,
     image: String,
-    url: String,
     description: String
 });
 
 var Calculator = mongoose.model("Calculator", calculatorSchema);
 
-/*
+
 Calculator.create({
         name: "binomial",
         image: "images/binomial.png",
-        url: "calculators/binomial",
         description: "Binomial adalah jumlah keberhasilan dalam n percobaan ya/tidak dimana setiap percobaan memiliki probalitas"
     },
     function(err, calculator) {
@@ -47,7 +45,7 @@ Calculator.create({
     }
 
 );
-*/
+
 
 
 
@@ -75,9 +73,7 @@ app.get("/calculators", function(req, res) {
     });
 });
 
-app.get("/show", function(req, res) {
-    res.render("show");
-});
+
 
 // tampilkan per kalkulator
 app.get("/calculators/:id", function(req, res) {
@@ -87,7 +83,7 @@ app.get("/calculators/:id", function(req, res) {
             console.log(err);
         } else {
             // render calculator dan kirim data kalkulator
-            res.render(foundCalculator.url, { calculators: foundCalculator });
+            res.render("show", { calculators: foundCalculator });
         }
     });
 });
