@@ -9,6 +9,10 @@
     },
     "author": "haris sucipto",
     "license": "ISC",
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/harissucipto/Kalkulator.git"
+    },
     "dependencies": {
         "body-parser": "^1.14.1",
         "connect-flash": "^0.1.1",
