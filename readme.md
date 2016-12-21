@@ -28,3 +28,10 @@ Setiap Calculator  mempunyai:
 * Bikin folder models
 * gunakan module.exports
 * pakai require
+
+## hapus collection database Kalkulator dulu
+* db.collection.drop()
+
+## tambahkan seed file
+* bikin file seeds.js
+* seed file berguna untuk membuat prototype data.
