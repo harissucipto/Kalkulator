@@ -75,6 +75,11 @@ app.post("/login", passport.authenticate("local", {
 
 });
 
+app.get("/logout", function(req, res) {
+    req.logout();
+    req.redirect("/calculators");
+});
+
 
 // =======================
 // CALCULATORS ROUTES
@@ -102,6 +107,7 @@ app.get("/calculators/:id", function(req, res) {
     });
 });
 
+// middleware
 function isLoggedIn(req, res, next) {
     if (req.isAuthenticated()) {
         return next();
