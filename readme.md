@@ -35,3 +35,23 @@ Setiap Calculator  mempunyai:
 ## tambahkan seed file
 * bikin file seeds.js
 * seed file berguna untuk membuat prototype data.
+
+##Auth Pt. 1 - Add User Model
+* instal semua package untuk auth
+* Define User model 
+
+##Auth Pt. 2 - Register
+* Configure Passport
+* Add register routes
+* Add register template
+
+##Auth Pt. 3 - Login
+* Add login routes
+* Add login template
+
+##Auth Pt. 4 - Logout/Navbar
+* Add logout routes
+* Add links to navbar
+
+##Auth Pt. 5 - Show/Hide Links
+* Show/hide auth links in navbar correctly

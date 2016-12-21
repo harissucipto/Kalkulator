@@ -2,7 +2,10 @@ var express = require("express"),
     app = express(),
     bodyParser = require("body-parser"),
     mongoose = require("mongoose"),
+    passport = require("passport"),
+    LocalStrategy = require("passport-local"),
     Calculator = require("./models/calculator"),
+    User = require("./models/user.js"),
     seedDB = require("./seeds");
 
 
@@ -10,7 +13,24 @@ mongoose.connect("mongodb://localhost/kalkulator");
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(express.static(__dirname + "/public"));
 app.set("view engine", "ejs");
-seedDB();
+// seedDB();
+
+
+// PASSPORT CONFIGURATION
+app.use(require("express-session")({
+    secret: "Aplikasi kalkulator",
+    resave: false,
+    saveUninitialized: false
+}));
+app.use(passport.initialize());
+app.use(passport.session());
+passport.use(new LocalStrategy(User.authenticate()));
+passport.serializeUser(User.serializeUser());
+passport.deserializeUser(User.deserializeUser());
+
+
+
+
 
 // ==========================
 // INDEX ROUTES
@@ -30,12 +50,10 @@ app.get("/calculators", function(req, res) {
         if (err) {
             console.log(err);
         } else {
-            res.render("index", { calculators: allCalculator });
+            res.render("calculators/index", { calculators: allCalculator });
         }
     });
 });
-
-
 
 // tampilkan per kalkulator
 app.get("/calculators/:id", function(req, res) {
@@ -45,7 +63,7 @@ app.get("/calculators/:id", function(req, res) {
             console.log(err);
         } else {
             // render calculator dan kirim data kalkulator
-            res.render("show", { calculators: foundCalculator });
+            res.render("calculators/show", { calculator: foundCalculator });
         }
     });
 });
