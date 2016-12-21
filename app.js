@@ -29,7 +29,7 @@ var calculatorSchema = new mongoose.Schema({
 
 var Calculator = mongoose.model("Calculator", calculatorSchema);
 
-
+/*
 Calculator.create({
         name: "binomial",
         image: "images/binomial.png",
@@ -46,9 +46,7 @@ Calculator.create({
 
 );
 
-
-
-
+*/
 
 // ==========================
 // INDEX ROUTES
