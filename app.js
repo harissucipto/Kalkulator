@@ -40,6 +40,9 @@ app.get("/", function(req, res) {
     res.render("landing");
 });
 
+app.get("/register", function(req, res) {
+    res.render("register");
+});
 
 
 // =======================
