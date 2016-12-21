@@ -55,3 +55,6 @@ Setiap Calculator  mempunyai:
 
 ##Auth Pt. 5 - Show/Hide Links
 * Show/hide auth links in navbar correctly
+
+##Refactor The routes
+* gunakan Express router untuk mengorganisasi semua rute
