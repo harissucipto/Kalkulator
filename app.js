@@ -28,7 +28,10 @@ passport.use(new LocalStrategy(User.authenticate()));
 passport.serializeUser(User.serializeUser());
 passport.deserializeUser(User.deserializeUser());
 
-
+app.use(function(req, res, next) {
+    res.locals.currentUser = req.user;
+    next();
+});
 
 
 
@@ -99,7 +102,12 @@ app.get("/calculators/:id", function(req, res) {
     });
 });
 
-
+function isLoggedIn(req, res, next) {
+    if (req.isAuthenticated()) {
+        return next();
+    }
+    res.redirect("/login");
+}
 
 
 // starting server in port 3000
