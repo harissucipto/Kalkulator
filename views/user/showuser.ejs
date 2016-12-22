@@ -19,13 +19,14 @@
                             <div class="caption">
                                 <h4><%= calculator.name %></h4>
                             </div>
+                            <hr>
                             <div class="description">
-                                <h4><%= calculator.description %></h4>
+                                <strong><h4><%= calculator.description %></h4></strong>
                             </div>
                             <p>
-                                <a href="<%= calculator._id %>" class="btn btn-primary">Gunakan</a>
+                                <a href="<%= calculator._id %>" class="btn btn-primary btn-block">Gunakan</a>
                                 <form action="/calculators/<%= calculator._id %>/dbookmark?_method=DELETE" METHOD="POST">
-                                    <input type="submit" class="btn btn-warning" value="hapus dari Bookmark">
+                                    <input type="submit" class="btn btn-warning btn-block" value="hapus dari Bookmark">
                                 </form>
                             </p>
                         </div>
