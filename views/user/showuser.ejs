@@ -1,17 +1,36 @@
 <% include ../partials/header %>
-<%= user %>
-<% if (user.bookmarks.length > 0) { %>
-    <p>Ada Bookmarks</p>
-<% } else { %>
-    <p>Tidak ada Bookmarks</p>
-<% } %>
 
 <div class="container">
     <div class="row">
         <div class="col-md-3">
             <div class="list-group">
-                <li class="list-group-item active">Informasi Pengguna</li>
-                <li class="list-group-item">currentUser.username</li>
+                <li class="list-group-item active"><h4>INFORMASI PENGGUNA</h4></li>
+                <li class="list-group-item"><h4><%= currentUser.username %></h4></li>
+                <li class="list-group-item"><h4><%= currentUser.nama %></h4></li>
+                <li class="list-group-item"><h4><%= currentUser.email %></h4></li>
+            </div>
+        </div>
+        <div class="col-md=9">
+            <div class="row text-center" style="display:flex flex-wrap: wrap;">
+                <% user.bookmarks.forEach(function(calculator) { %>
+                    <div class="col-md-3 col-sm-4">
+                        <div class="thumbnail">
+                            <img src="/<%= calculator.image %>">
+                            <div class="caption">
+                                <h4><%= calculator.name %></h4>
+                            </div>
+                            <div class="description">
+                                <h4><%= calculator.description %></h4>
+                            </div>
+                            <p>
+                                <a href="<%= calculator._id %>" class="btn btn-primary">Gunakan</a>
+                                <form action="/calculators/<%= calculator._id %>/dbookmark?_method=DELETE" METHOD="POST">
+                                    <input type="submit" class="btn btn-warning" value="hapus dari Bookmark">
+                                </form>
+                            </p>
+                        </div>
+                    </div>
+                <% }) %>
             </div>
         </div>
     </div>
