@@ -4,6 +4,7 @@ var express = require("express"),
     mongoose = require("mongoose"),
     passport = require("passport"),
     LocalStrategy = require("passport-local"),
+    methodOverride = require("method-override"),
     Calculator = require("./models/calculator"),
     User = require("./models/user.js"),
     seedDB = require("./seeds");
@@ -12,13 +13,15 @@ var express = require("express"),
 mongoose.connect("mongodb://localhost/kalkulator");
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(express.static(__dirname + "/public"));
+app.use(methodOverride("_method"));
 app.set("view engine", "ejs");
 // seedDB();
 
 
 // requiring routes
 var calculatorRoutes = require("./routes/calculators"),
-    indexRoutes = require("./routes/index");
+    indexRoutes = require("./routes/index"),
+    userRoutes = require("./routes/user");
 
 
 // PASSPORT CONFIGURATION
@@ -40,15 +43,9 @@ app.use(function(req, res, next) {
 
 app.use("/", indexRoutes);
 app.use("/calculators", calculatorRoutes);
+app.use("/user", userRoutes);
 
 
-// middleware
-function isLoggedIn(req, res, next) {
-    if (req.isAuthenticated()) {
-        return next();
-    }
-    res.redirect("/login");
-}
 
 
 // starting server in port 3000

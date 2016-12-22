@@ -11,6 +11,11 @@
         <div class="col-md-9">
             <div class="thumbnail">
             <div class="caption-full">
+                <div class="text-right">
+                    <form action="/calculators/<%= calculator._id %>/bookmark?_method=PUT" METHOD="POST">
+                        <button class="btn btn-success" >Add Bookmark</a>
+                    </form>
+                </div>
                 <div id="KalkulatorTunjukan">
                     Sedang Memuat Kalkulator....
                 </div>

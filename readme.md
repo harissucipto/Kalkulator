@@ -58,3 +58,8 @@ Setiap Calculator  mempunyai:
 
 ##Refactor The routes
 * gunakan Express router untuk mengorganisasi semua rute
+
+## tambahkan fitur bookmark
+* overide method 
+* rute bookmark pada calculator
+* penambahan model schema bookmarks pada user 

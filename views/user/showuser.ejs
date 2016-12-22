@@ -1,0 +1,13 @@
+<% include ../partials/header %>
+<%= user %>
+
+<% if (user.bookmarks.length > 0) { %>
+    <p>Ada Bookmarks</p>
+<% } else { %>
+    <p>Tidak ada Bookmarks</p>
+<% } %>
+
+
+
+    
+<% include ../partials/footer %>
