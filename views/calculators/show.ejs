@@ -12,9 +12,15 @@
             <div class="thumbnail">
             <div class="caption-full">
                 <div class="text-right">
-                    <form action="/calculators/<%= calculator._id %>/bookmark?_method=PUT" METHOD="POST">
-                        <button class="btn btn-success" >Add Bookmark</a>
-                    </form>
+                    <% if (tombolBookmark) { %>
+                        <form action="/calculators/<%= calculator._id %>/bookmark?_method=PUT" METHOD="POST">
+                            <input type="submit" class="btn btn-success" value="tambah ke Bookmark">
+                        </form>
+                    <% } else { %>
+                        <form action="/calculators/<%= calculator._id %>/dbookmark?_method=DELETE" METHOD="POST">
+                            <input type="submit" class="btn btn-warning" value="hapus dari Bookmark">
+                        </form>
+                    <% } %>
                 </div>
                 <div id="KalkulatorTunjukan">
                     Sedang Memuat Kalkulator....

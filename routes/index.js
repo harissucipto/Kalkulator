@@ -15,12 +15,17 @@ router.get("/register", isNotLoggedIn, function(req, res) {
 
 // handle signup logic
 router.post("/register", isNotLoggedIn, function(req, res) {
-    var newUser = new User({ username: req.body.username, password: req.body.password });
+    var newUser = new User({
+        username: req.body.username,
+        nama: req.body.nama,
+        email: req.body.email
+    });
     User.register(newUser, req.body.password, function(err, user) {
         if (err) {
             console.log(err);
             return res.render("register");
         }
+        console.log(user);
         passport.authenticate("local")(req, res, function() {
             res.redirect("/calculators");
         });

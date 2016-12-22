@@ -5,9 +5,12 @@ var UserSchema = new mongoose.Schema({
     username: String,
     password: String,
     bookmarks: [{
-        name: String,
-        id: String
-    }]
+        type: mongoose.Schema.Types.ObjectId,
+        ref: "Calculator"
+    }],
+    nama: String,
+    email: String,
+
 });
 
 UserSchema.plugin(passportLocalMongoose);

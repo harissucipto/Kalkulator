@@ -4,7 +4,7 @@ var User = require("../models/user");
 
 
 router.get("/", isLoggedIn, function(req, res) {
-    User.findById(req.user._id, function(err, foundUser) {
+    User.findById(req.user._id).populate("bookmarks").exec(function(err, foundUser) {
         if (err) {
             console.log(err);
             res.redirect("back");

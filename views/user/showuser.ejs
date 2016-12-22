@@ -1,11 +1,21 @@
 <% include ../partials/header %>
 <%= user %>
-
 <% if (user.bookmarks.length > 0) { %>
     <p>Ada Bookmarks</p>
 <% } else { %>
     <p>Tidak ada Bookmarks</p>
 <% } %>
+
+<div class="container">
+    <div class="row">
+        <div class="col-md-3">
+            <div class="list-group">
+                <li class="list-group-item active">Informasi Pengguna</li>
+                <li class="list-group-item">currentUser.username</li>
+            </div>
+        </div>
+    </div>
+</div>
 
 
 
