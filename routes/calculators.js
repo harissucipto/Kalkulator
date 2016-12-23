@@ -48,7 +48,6 @@ router.delete("/:id/dbookmark", middleware.cekUsersamaKalulator, function(req, r
                 .slice(0, indexCari)
                 .concat(siArray.slice(indexCari + 1, siArray.length));
         };
-        console.log(hapusBookmark(foundUser.bookmarks, req.params.id));
         foundUser.bookmarks = hapusBookmark(foundUser.bookmarks, req.params.id);
         foundUser.save();
         res.redirect("back");

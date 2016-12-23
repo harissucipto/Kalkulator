@@ -12,12 +12,14 @@ middlewareObj.checkIsLoggedIn = function(req, res, next) {
     if (req.isAuthenticated()) {
         return next();
     }
+    req.flash("error", "Kamu Harus Login/Masuk Dulu!!");
     res.redirect("/login");
 };
 
 // cek jika tidak login
 middlewareObj.checkIsNotLoggedIn = function(req, res, next) {
     if (req.isAuthenticated()) {
+        req.flash("error", "Kamu Harus Logout/Keluar, Baru Bisa Melakukan Aksi ini!");
         res.redirect("/user");
     }
     return next();
@@ -29,7 +31,7 @@ middlewareObj.tambahBookmark = function(req, res, next) {
     if (req.isAuthenticated()) {
         User.findById(req.user._id).populate("bookmarks").exec(function(err, foundUser) {
             if (err) {
-                console.log(err);
+                req.flash("error", "Pengguna tidak ditemukan!");
                 res.redirect("back");
             }
             // fungsi untuk menemukan array
@@ -46,14 +48,16 @@ middlewareObj.tambahBookmark = function(req, res, next) {
             Calculator.findById(req.params.id, function(err, foundCalculator) {
                 var kondisi = ditemukan(foundUser.bookmarks, foundCalculator.name).length;
                 if (kondisi === 0) {
+                    req.flash("success", "Aplikasi berhasil ditambahkan");
                     return next(); // jika tidak duplikat lanjutkan
                 } else {
-                    console.log("sudah ada");
+                    req.flash("error", "Error Aplikasi ini sudah ada didalam Bookmark list");
                     res.redirect("back");
                 }
             });
         });
     } else {
+        req.flash("error", "Silahkan login terlebih dahulu!, untuk bisa melakuka aksi ini!");
         res.redirect("/login");
     }
 };
@@ -99,8 +103,8 @@ middlewareObj.cekUsersamaKalulator = function(req, res, next) {
     if (req.isAuthenticated()) {
         User.findById(req.user._id, function(err, foundUser) {
             if (err) {
-                console.log(err);
-                res.redirect("/login");
+                req.flash("error", "Error, Pengguna Tidak ditemukan");
+                res.redirect("back");
             }
             var sama = false;
             foundUser.bookmarks.forEach(function(item) {
@@ -109,12 +113,15 @@ middlewareObj.cekUsersamaKalulator = function(req, res, next) {
                 }
             });
             if (sama) {
+                req.flash("success", "Berhasil menghapus Aplikasi dari Bookmark");
                 return next();
             } else {
+                req.flash("error", "Error, Tidak Dapat menghapus!");
                 res.redirect("back");
             }
         });
     } else {
+        req.flash("error", "Anda Harus Login terlebih dahulu untuk bisa melakukan aksi ini!");
         res.redirect("/login");
     }
 };

@@ -21,13 +21,13 @@ router.post("/register", middleware.checkIsNotLoggedIn, function(req, res) {
         nama: req.body.nama,
         email: req.body.email
     });
-    User.register(newUser, middleware.req.body.password, function(err, user) {
+    User.register(newUser, req.body.password, function(err, user) {
         if (err) {
             console.log(err);
             return res.render("register");
         }
-        console.log(user);
         passport.authenticate("local")(req, res, function() {
+            req.flash("success", "Selamat datang, " + user.username + " di Aplikasi Statistika");
             res.redirect("/calculators");
         });
     });
@@ -42,12 +42,11 @@ router.get("/login", middleware.checkIsNotLoggedIn, function(req, res) {
 router.post("/login", middleware.checkIsNotLoggedIn, passport.authenticate("local", {
     successRedirect: "/calculators",
     failureRedirect: "/login"
-}), function(req, res) {
-
-});
+}), function(req, res) {});
 
 router.get("/logout", middleware.checkIsLoggedIn, function(req, res) {
     req.logout();
+    req.flash("success", "Kamu berhasil Keluar!");
     res.redirect("/calculators");
 });
 

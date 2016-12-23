@@ -71,5 +71,5 @@ Setiap Calculator  mempunyai:
 
 ## restruktur middleware dan tambahkan flash connect
 * organisir middlware secara terpisah
-* tambahkan flash connect untuk menampilkan popout error
+* tambahkan flash connect untuk menampilkan popout error dan success
 * oraganisir fungsi yang akan digunkan

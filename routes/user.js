@@ -7,10 +7,9 @@ var middleware = require("../middleware");
 router.get("/", middleware.checkIsLoggedIn, function(req, res) {
     User.findById(req.user._id).populate("bookmarks").exec(function(err, foundUser) {
         if (err) {
-            console.log(err);
+            req.flash("error", "Data sedang bermasalah");
             res.redirect("back");
         }
-        console.log(foundUser);
         res.render("user/showuser", { user: foundUser });
     });
 });
