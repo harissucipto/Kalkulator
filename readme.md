@@ -68,3 +68,8 @@ Setiap Calculator  mempunyai:
 ## edit tampilan pengguna
 * refix styling pada halaman
 * optimasi tampilan halaman(sedikit)
+
+## restruktur middleware dan tambahkan flash connect
+* organisir middlware secara terpisah
+* tambahkan flash connect untuk menampilkan popout error
+* oraganisir fungsi yang akan digunkan

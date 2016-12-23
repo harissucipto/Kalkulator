@@ -1,9 +1,10 @@
 var express = require("express");
 var router = express.Router();
 var User = require("../models/user");
+var middleware = require("../middleware");
 
 
-router.get("/", isLoggedIn, function(req, res) {
+router.get("/", middleware.checkIsLoggedIn, function(req, res) {
     User.findById(req.user._id).populate("bookmarks").exec(function(err, foundUser) {
         if (err) {
             console.log(err);
@@ -13,14 +14,5 @@ router.get("/", isLoggedIn, function(req, res) {
         res.render("user/showuser", { user: foundUser });
     });
 });
-
-// middleware
-function isLoggedIn(req, res, next) {
-    if (req.isAuthenticated()) {
-        return next();
-    }
-    res.redirect("/login");
-}
-
 
 module.exports = router;
