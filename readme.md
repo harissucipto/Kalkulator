@@ -63,3 +63,8 @@ Setiap Calculator  mempunyai:
 * overide method 
 * rute bookmark pada calculator
 * penambahan model schema bookmarks pada user 
+
+
+## edit tampilan pengguna
+* refix styling pada halaman
+* optimasi tampilan halaman(sedikit)
