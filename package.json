@@ -11,7 +11,7 @@
     "license": "ISC",
     "repository": {
         "type": "git",
-        "url": ""
+        "url": "https://github.com/harissucipto/Kalkulator.git"
     },
     "dependencies": {
         "body-parser": "^1.14.1",
