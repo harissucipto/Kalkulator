@@ -82,6 +82,10 @@ middlewareObj.cekBookmarkTidakDuplikat = function(req, res, next) {
                 return siArray.filter(temukan);
             };
             Calculator.findById(req.params.id, function(err, foundCalculator) {
+                if (err) {
+                    req.tombolBookmark = false;
+                    return next();
+                }
                 var kondisi = ditemukan(foundUser.bookmarks, foundCalculator.name).length;
                 if (kondisi === 0) {
                     req.tombolBookmark = true;

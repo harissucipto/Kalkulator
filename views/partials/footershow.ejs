@@ -1,9 +1,9 @@
 
 
-    <script type="text/javascript" src="/js/lib/jquery.js"></script>
-    <script type="text/javascript" src="/js/lib/bootstrap.js"></script>
+    <script type="text/javascript" src="/js/jquery.js"></script>
+    <script type="text/javascript" src="/js/bootstrap.js"></script>
     <script type="text/javascript">
-        $("#KalkulatorTunjukan").load("/calculators/<%= calculator.name %>.html");
+        $("#KalkulatorTunjukan").load("<%= calculator.urlscript %>");
     </script>
 </body>
 </html>

@@ -10,7 +10,7 @@ router.get("/", middleware.checkIsLoggedIn, function(req, res) {
             req.flash("error", "Data sedang bermasalah");
             res.redirect("back");
         }
-        res.render("user/showuser", { user: foundUser });
+        res.render("user/showuser", { user: foundUser, beradaUser: "active" });
     });
 });
 

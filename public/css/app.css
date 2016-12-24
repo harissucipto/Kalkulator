@@ -1,0 +1,23 @@
+.thumbnail img {
+    width: 100%;
+}
+
+.thumbnail {
+    padding: 0;
+}
+
+.thumbnail .caption-full {
+    padding: 9px;
+}
+
+.tebal {
+    font-weight: bolder;
+}
+
+.spasiKeBawah {
+    margin-bottom: 10px;
+}
+
+.lingkaran {
+    border: 4px solid dodgerblue;
+}

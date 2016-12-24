@@ -2,11 +2,7 @@
 
 <div class="container">
     <div class="row">   
-        <% if (user.bookmarks.length === 0) { %>
-                <div class="col-md-offset-3 col-md-6">
-        <% } else { %>
-                <div class="col-md-3">
-        <% } %>
+        <div class="col-md-3">
             <div class="list-group">
                 <li class="list-group-item active"><h4>INFORMASI PENGGUNA</h4></li>
                 <li class="list-group-item">username: <h4><%= currentUser.username %></h4></li>
@@ -15,28 +11,34 @@
             </div>
         </div>
         <div class="col-md-9">
-            <div class="row text-center" style="display:flex flex-wrap: wrap;">
-                <% user.bookmarks.forEach(function(calculator) { %>
-                    <div class="col-md-4 col-sm-4">
-                        <div class="thumbnail">
-                            <img src="/<%= calculator.image %>">
-                            <div class="caption">
-                                <h4><%= calculator.name %></h4>
+            <button class="spasiKeBawah btn btn-lg btn-info btn-block">Daftar bookmarks List Aplikasimu</button>
+            <% if (user.bookmarks.length === 0) { %>
+                <div class="alert alert-warning" role="alert">
+                    <h4 class="text-center">Bookmarklist Aplikasimu masih kosong</h4>
+                </div>
+            <% } else { %>
+                   <div class="row text-center" style="display:flex flex-wrap: wrap;">
+                    <% user.bookmarks.forEach(function(calculator) { %>
+                        <div class="col-md-4 col-sm-4">
+                            <div class="thumbnail">
+                                <img src="/<%= calculator.image %>">
+                                <div class="caption">
+                                    <h4><%= calculator.name %></h4>
+                                </div>
+                                <div class="description">
+                                    <strong><h4><%= calculator.description %></h4></strong>
+                                </div>
+                                <p>
+                                    <a href="<%= calculator._id %>" class="btn btn-primary btn-block">Gunakan</a>
+                                    <form action="/calculators/<%= calculator._id %>/dbookmark?_method=DELETE" METHOD="POST">
+                                        <input type="submit" class="btn btn-danger btn-block" value="hapus dari Bookmark">
+                                    </form>
+                                </p>
                             </div>
-                            <hr>
-                            <div class="description">
-                                <strong><h4><%= calculator.description %></h4></strong>
-                            </div>
-                            <p>
-                                <a href="<%= calculator._id %>" class="btn btn-primary btn-block">Gunakan</a>
-                                <form action="/calculators/<%= calculator._id %>/dbookmark?_method=DELETE" METHOD="POST">
-                                    <input type="submit" class="btn btn-warning btn-block" value="hapus dari Bookmark">
-                                </form>
-                            </p>
                         </div>
-                    </div>
-                <% }) %>
-            </div>
+                    <% }) %>
+                </div> 
+            <% } %>
         </div>
     </div>
 </div>

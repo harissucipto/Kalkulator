@@ -1,29 +1,32 @@
 <% include ../partials/header %>
 <div class="container">
     <header class="jumbotron">
-        <div class="container">
-            <h1>Selamat Menggunakan!!</h1>
+        <div class="container ">
+            <h1><span class="glyphicon glyphicon-th" aria-hidden="true"></span> Aplikasi Kalkulator</h1>
             <p>
-                Dirancang untuk menyelesaikan masalah langkah demi langkah!.
+                Dirancang untuk menyelesaikan masalah Perhitungan langkah demi langkah!.
             </p>
+            <p>
+                <% if (!currentUser) { %>
+                         <a class="btn btn-primary" href="/login">Login Untuk Fitur Tambahan</a>
+                <% } else { %>
+                       <a class="btn btn-primary" href="/user">Lihat Daftar Bookmarklist Aplikasimu</a>
+                <% } %>
+             </p>
         </div>
     </header>
     
     <div class="row text-center" style="display:flex flex-wrap: wrap;">
         <% calculators.forEach(function(calculator) { %>
-            <div class="col-md-3 col-sm-4">
+            <div class="col-md-3 col-sm-6">
                 <div class="thumbnail">
-                    <img src="/<%= calculator.image %>">
-                    <div class="caption">
-                        <h4><%= calculator.name %></h4>
-                    </div>
-                    <hr>
-                    <div class="description">
-                        <h4><%= calculator.description %></h4>
-                    </div>
-                    <p>
-                        <a href="<%= calculator._id %>" class="btn btn-primary btn-block">Gunakan</a>
-                    </p>
+                   <img src="/<%= calculator.image %>">
+                   <div class="caption">
+                       <h4 class="tebal"><%= calculator.name %></h4>
+                   </div>
+                   <p>
+                       <a href="<%= calculator._id %>" class="btn btn-primary">Gunakan</a>
+                   </p>
                 </div>
             </div>
         <% }) %>

@@ -73,3 +73,12 @@ Setiap Calculator  mempunyai:
 * organisir middlware secara terpisah
 * tambahkan flash connect untuk menampilkan popout error dan success
 * oraganisir fungsi yang akan digunkan
+
+
+## restyling situs dan perbaikan middleware
+* restyle landing page.
+* restyle home page
+* restyle user page
+* fix some probelm about middlware
+* add more property schema
+* still cant find solusition how can they error in middleware interface to show perkalkulator

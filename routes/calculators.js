@@ -10,7 +10,7 @@ router.get("/", function(req, res) {
         if (err) {
             console.log(err);
         } else {
-            res.render("calculators/index", { calculators: allCalculator });
+            res.render("calculators/index", { calculators: allCalculator, beradaHome: "active" });
         }
     });
 });

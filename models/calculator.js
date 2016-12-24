@@ -3,7 +3,9 @@ var mongoose = require("mongoose");
 var calculatorSchema = new mongoose.Schema({
     name: String,
     image: String,
-    description: String
+    description: String,
+    urlscript: String,
+    Created: String
 });
 
 

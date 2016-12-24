@@ -6,12 +6,12 @@ var middleware = require("../middleware");
 
 // landing pages route
 router.get("/", function(req, res) {
-    res.render("landing");
+    res.render("landing", { beradaLanding: "active" });
 });
 
 // show register form
 router.get("/register", middleware.checkIsNotLoggedIn, function(req, res) {
-    res.render("register");
+    res.render("register", { beradaRegister: "active" });
 });
 
 // handle signup logic
@@ -24,6 +24,7 @@ router.post("/register", middleware.checkIsNotLoggedIn, function(req, res) {
     User.register(newUser, req.body.password, function(err, user) {
         if (err) {
             console.log(err);
+            req.flash("error", err.message);
             return res.render("register");
         }
         passport.authenticate("local")(req, res, function() {
@@ -35,7 +36,7 @@ router.post("/register", middleware.checkIsNotLoggedIn, function(req, res) {
 
 // show login form
 router.get("/login", middleware.checkIsNotLoggedIn, function(req, res) {
-    res.render("login");
+    res.render("login", { beradaLogin: "active" });
 });
 
 // handle login logic
@@ -47,7 +48,7 @@ router.post("/login", middleware.checkIsNotLoggedIn, passport.authenticate("loca
 router.get("/logout", middleware.checkIsLoggedIn, function(req, res) {
     req.logout();
     req.flash("success", "Kamu berhasil Keluar!");
-    res.redirect("/calculators");
+    res.redirect("/");
 });
 
 module.exports = router;
