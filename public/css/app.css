@@ -21,3 +21,25 @@
 .lingkaran {
     border: 4px solid dodgerblue;
 }
+
+.inputan {
+    width: 100px;
+    padding-left: 5px;
+    margin-left: 5%;
+    border-left: 6px solid green;
+}
+
+.perintah {
+    margin-bottom: 15px;
+}
+
+#jawaban {
+    border-left: 1em solid lightblue;
+    padding-left: 2%;
+    margin-left: 2px;
+}
+
+.logreg {
+    max-width: 450px;
+    margin: 25px auto;
+}

@@ -1,67 +1,33 @@
-<!DOCTYPE html>
-<html lang="en">
-
-<head>
-    <title>Binomial Haris</title>
-    <script type="text/javascript" src="/js/jquery.js"></script>
-    <script type="text/javascript" src="/js/fraction.min.js"></script>
-    <style>
-        #keterangan {
-            border: 2px solid black;
-            width: 320px;
-            margin-left: 10px;
-            padding-left: 10px;
-        }
-    </style>
-</head>
-
-<body>
-    <h1>Binomial ***
-    </h1>
-    <em>Code and Write by: Haris Sucipto</em>
-    <p>
-
-        Binomial adalah jumlah keberhasilan dalam n percobaan ya/tidak dimana setiap percobaan memiliki probalitas
-    </p>
-
-    <hr>
-
-    <div id="hitung">
-        <p>Masukan Banyak kali Percobaan(n)<em>Biasanya angka terbesar</em>:
-            <input type="number" id="n">
-        </p>
-        <p>Masukan Banyak Berhasil(x)<em>Biasa disebut juga Berapa kali peluang muncul jika</em>:
-            <input type="number" id="x">
-        </p>
-        <strong>Selanjutnya masukan peluang = P(a) / p(s)</strong>
-        <p>
-            Masukan p(a)<em>adalah  peluang muncul sampel</em>
-            <input type="number" id="pa">
-        </p>
-        <p>
-            Masukan p(s)<em>adalah  Ruang Sampel</em>
-            <input type="number" id="ps">
-        </p>
-    </div>
-
-    <button id="proses">Cari</button>
-    <hr>
-    <div id="jawaban"></div>
-
-    <hr>
-    <div id="keterangan">
-        <p>P(X) = ( n! / (n - x)! x! ) * p^x * q^(n-x)</p>
-        kesimpulan rumus:
-        <ul>
-            <li>n = banyak percobaan</li>
-            <li>x = banyak berhasil</li>
-            <li>p = peluang berhasil</li>
-            <li>q = peluang gagal (q = 1 -p)</li>
-        </ul>
-    </div>
-
-
-    <script type="text/javascript" src="/js/binomial.js"></script>
-</body>
-
-</html>
+<h1>Aplikasi Kalkulator Binomial</h1>
+<hr>
+<div id="hitung">
+    <p><strong>Masukan Sesaui Perintahnya</strong></p>
+    <ul>
+        <li class="perintah">
+            <p>Masukan Banyak kali Percobaan(n)<em>Biasanya angka terbesar</em>:</p>
+            <input class="inputan" type="number" id="n">
+        </li>
+        <li class="perintah">
+            <p>Masukan Banyak Berhasil(x)<em>Biasa disebut juga Berapa kali peluang muncul jika</em>:</p>
+            <input class="inputan" type="number" id="x">
+        </li>
+    </ul>
+    <p><strong>Selanjutnya masukan peluang = P(a) / p(s)</strong></p>
+    <ul>
+        <li class="perintah">
+            <p>Masukan p(a)<em>adalah  peluang muncul sampel</em></p>
+            <input class="inputan" type="number" id="pa">
+        </li>
+        <li class="perintah">
+            <p>Masukan p(s)<em>adalah  Ruang Sampel</em></p>
+            <input class="inputan" type="number" id="ps">
+        </li>
+    </ul>
+</div>
+<hr>
+<button id="proses" class="btn btn-info btn-block">Hitung / Cari Jawabanya</button>
+<hr>
+<div id="jawaban"></div>
+<hr>
+<script type="text/javascript" src="/js/fraction.min.js"></script>
+<script type="text/javascript" src="/js/binomial.js"></script>
