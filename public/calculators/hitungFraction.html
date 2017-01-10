@@ -1,0 +1,43 @@
+<h1>
+    Kalkulator Fraction</h1>
+<hr>
+<div id="hitung">
+    <p><strong>Masukan Sesuai Perintahnya</strong></p>
+    <ul>
+        <li class="perintah">
+            <p>Masukan A:</p>
+            <input class="inputan" type="text" id="A">
+        </li>
+        <li class="perintah">
+            <p>Masukan B:</p>
+            <input class="inputan" type="text" id="B">
+        </li>
+    </ul>
+    <p><strong>Operasi</strong></p>
+    <ul>
+        <li class="perintah">
+            <input type="button" class="klik" id="tambah" value="+">
+            <input type="button" class="klik" id="kurang" value="-">
+            <input type="button" class="klik" id="bagi" value="/">
+            <input type="button" class="klik" id="kali" value="*">
+        </li>
+        <li class="perintah">
+            <p>
+                A pangkat
+                <input type="text" id="pangkatA">
+                <button id="cApangkat">Cari Pangkat A</button>
+            </p>
+            <p>
+                B pangkat
+                <input type="text" id="pangkatB">
+                <button id="cBpangkat">Cari Pangkat B</button>
+            </p>
+        </li>
+    </ul>
+</div>
+<hr>
+<div id="jawaban" class="jawaban"></div>
+<hr>
+<script type="text/javascript" src="/js/jquery.js"></script>
+<script type="text/javascript" src="/js/fraction.min.js"></script>
+<script type="text/javascript" src="/js/hitungFraction.js"></script>

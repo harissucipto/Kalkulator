@@ -1,4 +1,5 @@
 #Kalkulator
+Sebuah Aplikasi Yang Dikembangkan Untuk Mempermudah dalam melakuakan perhitungan.
 
 ##Inital Setup
 * Tambahankan Landing Page

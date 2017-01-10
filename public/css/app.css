@@ -52,3 +52,34 @@
     padding-right: 10px;
     color: grey;
 }
+
+.isiTable th,
+.isiTable td {
+    border: 1px solid black;
+    text-align: center;
+    padding: 5px;
+    font-weight: bolder;
+}
+
+.isiTable th {
+    background: yellow;
+}
+
+.jawaban {
+    border-left: 1em solid lightblue;
+    padding-left: 2%;
+    margin-left: 2px;
+}
+
+div#kolomData {
+    display: none;
+}
+
+div#hasil {
+    display: none;
+}
+
+.inputaK {
+    text-align: center;
+    width: 50px;
+}

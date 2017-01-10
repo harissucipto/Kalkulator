@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Binomial</title>
+    <link rel="stylesheet" type="text/css" href="../bootstrap.css">
+    <link rel="stylesheet" type="text/css" href="../stylesheet.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+</head>
+
+<body>
+    <h1>Aplikasi Kalkulator Binomial</h1>
+    <hr>
+    <div id="hitung">
+        <p><strong>Masukan Sesaui Perintahnya</strong></p>
+        <ul>
+            <li class="perintah">
+                <p>Masukan Banyak kali Percobaan(n)<em>Biasanya angka terbesar</em>:</p>
+                <input class="inputan" type="number" id="n">
+            </li>
+            <li class="perintah">
+                <p>Masukan Banyak Berhasil(x)<em>Biasa disebut juga Berapa kali peluang muncul jika</em>:</p>
+                <input class="inputan" type="number" id="x">
+            </li>
+        </ul>
+        <p><strong>Selanjutnya masukan peluang = P(a) / p(s)</strong></p>
+        <ul>
+            <li class="perintah">
+                <p>Masukan p(a)<em>adalah  peluang muncul sampel</em></p>
+                <input class="inputan" type="number" id="pa">
+            </li>
+            <li class="perintah">
+                <p>Masukan p(s)<em>adalah  Ruang Sampel</em></p>
+                <input class="inputan" type="number" id="ps">
+            </li>
+        </ul>
+    </div>
+    <hr>
+    <button id="proses" class="btn btn-info btn-block">Hitung / Cari Jawabanya</button>
+    <hr>
+    <div id="jawaban" class="jawaban"></div>
+    <hr>
+    <script type="text/javascript" src="../js/jquery.js"></script>
+    <script type="text/javascript" src="../js/fraction.min.js"></script>
+    <script type="text/javascript" src="../js/binomial.js"></script>
+</body>
+
+</html>

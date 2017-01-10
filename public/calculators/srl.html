@@ -1,0 +1,55 @@
+<h1>
+    Aplikasi Kalkulator Regerasi Sederhana</h1>
+<hr>
+<div id="hitung">
+    <p><strong>Masukan Sesuai Perintahnya</strong></p>
+    <ul>
+        <li class="perintah">
+            <p>Banyak Data:</p>
+            <input class="inputan" id="banyakData" type="number">
+            <button id="masukanBanyakData" class="btn btn-info btn-sm">masukan</button>
+        </li>
+        <hr>
+        <li class="perintah">
+            <div id="kolomData">
+
+                <div id="data"></div>
+                <br>
+                <button id="prosesData" class="btn btn-default btn-sm">Proses</button>
+            </div>
+        </li>
+    </ul>
+</div>
+
+<div class="jawaban" id="hasil">
+    <hr>
+    <h3>Langkah Pemecahan Masalah</h3>
+    <div id="hasilTable"></div>
+
+
+    <hr>
+    <p>y = a + bX</p>
+    <hr>
+    <h3>Cari Koefisen a dan b:</h3>
+    <div id="solusiRumus"></div>
+    <hr>
+    <h3>Ketemu Rumus Persamaanya</h3>
+    <p>y = a + bX</p>
+    <p id="rumusnya"></p>
+
+    <p>Masukan x :
+        <input type="number" id="Xnumber">
+        <button id="cariY">Cari Y </button>
+    </p>
+
+    <p id="hasilY"></p>
+
+    <!-- korelasinya -->
+    <h3>Korelasinya yaitu:</h3>
+    <p>r = nExy - ExEy / akar((nEX^2 - (Ex)^2) . (nEY^2) - (EY)^2)) </p>
+    <p id="rumuskorelasi"></p>
+    <p>r = <span id="korelasi">ini hasilnya</span></p>
+    <p id="kesimpulankorelasi"></p>
+
+</div>
+<script type="text/javascript" src="/js/srl.js"></script>

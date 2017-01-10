@@ -1,0 +1,1 @@
+console.log(Math.pow(2.71828, -0.4).toFixed(5));
