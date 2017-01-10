@@ -43,3 +43,12 @@
     max-width: 450px;
     margin: 25px auto;
 }
+
+.about {
+    margin-top: 1%;
+}
+
+.about .jarak {
+    padding-right: 10px;
+    color: grey;
+}

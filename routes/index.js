@@ -51,4 +51,15 @@ router.get("/logout", middleware.checkIsLoggedIn, function(req, res) {
     res.redirect("/");
 });
 
+router.get("/about", function(req, res) {
+    res.render("about", { beradaAbout: "active" });
+});
+
+router.get("/about", function(req, res) {
+    res.render("about", { beradaAbout: "active" });
+});
+
+router.get("/contact", function(req, res) {
+    res.render("contact", { beradaContact: "active" });
+});
 module.exports = router;
